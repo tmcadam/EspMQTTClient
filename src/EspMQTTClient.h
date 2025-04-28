@@ -198,6 +198,10 @@ public:
     _mqttPassword   = password;
     _mqttServerPort = port;
   };
+  inline void setMqttCaCert(const char* ca_cert) { // Allow setting the MQTT info manually (must be done in setup())
+    _mqttRootCA = ca_cert;
+    _mqttSecure = true;
+  };
 
   // Wifi related
   void setWifiCredentials(const char* wifiSsid, const char* wifiPassword);
