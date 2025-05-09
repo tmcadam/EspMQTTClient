@@ -202,6 +202,9 @@ public:
     _mqttRootCA = ca_cert;
     _mqttSecure = true;
   };
+  inline void setSecure(const bool secure) { // Allow setting the MQTT info manually (must be done in setup())
+    _mqttSecure = secure;
+  };
 
   // Wifi related
   void setWifiCredentials(const char* wifiSsid, const char* wifiPassword);
